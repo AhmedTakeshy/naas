@@ -12,6 +12,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import newLogo from "@/../public/images/logo.png"
 import { Button } from "@/components/ui/button"
+import { LuMenu } from "react-icons/lu"
 
 const links = [
     { href: "/", label: "Home" },
@@ -34,7 +35,7 @@ export default function Navbar() {
 
     return (
         <header
-            className={`flex py-[1.6rem] mx-auto md:justify-around justify-between items-center w-full md:px-8 px-4 bg-dark-green-15 `}
+            className={`flex py-6 mx-auto sm:justify-around justify-between items-center w-full md:px-8 px-4 sm:px-8`}
         >
             <Link
                 href="/"
@@ -59,25 +60,24 @@ export default function Navbar() {
                     ))}
                 </NavigationMenuList>
             </NavigationMenu>
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2.5 ml-auto">
                 <Button asChild className="btn hidden md:inline-flex border border-white  transition-colors duration-300 hover:bg-white hover:text-darker" variant={"ghost"}>
                     <Link href="/contact">
                         Contact Us
                     </Link>
                 </Button>
-                <Button asChild className="py-3 px-5 rounded-full hidden md:inline-flex border border-dark-purple bg-dark-purple transition-colors duration-300 hover:bg-transparent hover:text-dark-purple " variant={"ghost"}>
+                <Button asChild className="btn hidden md:inline-flex border border-dark-purple bg-dark-purple transition-colors duration-300 hover:bg-transparent hover:text-white" variant={"ghost"}>
                     <Link href="/contact">
-                        Contact Us
+                        Join Us
                     </Link>
                 </Button>
-
             </div>
 
             {/* Nav for small screens */}
             <div className={`flex items-center gap-3 justify-between h-full md:hidden rounded-xl`}>
                 <Popover onOpenChange={setOpen} open={open}>
                     <PopoverTrigger aria-controls="2" aria-labelledby="open menu button" asChild>
-                        <Button className="group inline-flex w-12 h-12 text-light-green-70 py-1 px-2 md:hidden text-center items-center justify-center rounded shadow-[0_1px_0_theme(colors.slate.950/.04),0_1px_2px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] hover:shadow-[0_1px_0_theme(colors.slate.950/.04),0_4px_8px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] transition"
+                        <Button className="inline-flex md:hidden "
                             aria-pressed={open}
                             onClick={() => setOpen(!open)}
                             aria-describedby="open main menu"
@@ -86,16 +86,13 @@ export default function Navbar() {
                             type="button"
                             aria-controls="navbar-default"
                             aria-expanded={open}
+                            size={"icon"}
                         >
                             <span className="sr-only">Menu</span>
-                            <svg className="!w-6 !h-6 fill-current pointer-events-none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                <rect className="origin-center -translate-y-[5px] translate-x-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-x-0 group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[315deg]" y="7" width="9" height="2" rx="1"></rect>
-                                <rect className="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-[[aria-pressed=true]]:rotate-45" y="7" width="16" height="2" rx="1"></rect>
-                                <rect className="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:-rotate-[225deg]" y="7" width="9" height="2" rx="1"></rect>
-                            </svg>
+                            <LuMenu className="!size-6" />
                         </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="relative w-screen  top-5 border-none rounded-t-none bg-dark-green-15 ">
+                    <PopoverContent className="relative w-screen  top-5 border-none rounded-t-none bg-zinc-800">
                         <div className="flex flex-col items-center mx-auto gap-4">
                             <NavigationMenu>
                                 <NavigationMenuList className="flex flex-col items-center justify-center gap-2">
@@ -113,11 +110,18 @@ export default function Navbar() {
                                     ))}
                                 </NavigationMenuList>
                             </NavigationMenu>
-                            <Button asChild className="bg-light-green-70 w-full md:hidden inline-flex hover:bg-transparent ml-2 hover:border-light-green-70 hover:text-light-green-70 border border-transparent transition-colors duration-300 text-grey-15 font-semibold text-sm" variant={"ghost"}>
-                                <Link href="/contact">
-                                    Contact Us
-                                </Link>
-                            </Button>
+                            <div className="flex items-center gap-2.5 sm:ml-auto">
+                                <Button asChild className="btn md:hidden inline-flex border border-white text-white transition-colors duration-300 hover:bg-white hover:text-darker" variant={"ghost"}>
+                                    <Link href="/contact">
+                                        Contact Us
+                                    </Link>
+                                </Button>
+                                <Button asChild className="btn md:hidden inline-flex border border-dark-purple bg-dark-purple transition-colors duration-300 hover:bg-transparent hover:text-white" variant={"ghost"}>
+                                    <Link href="/contact">
+                                        Join Us
+                                    </Link>
+                                </Button>
+                            </div>
                         </div>
                     </PopoverContent>
                 </Popover>
