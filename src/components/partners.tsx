@@ -26,7 +26,7 @@ export default function Partners() {
         },
     ];
     return (
-        <section className="h-[40rem] rounded-md flex flex-col antialiased sm:-mt-8 bg-white dark:bg-darker  items-center justify-center relative overflow-hidden">
+        <section className="h-[25rem] rounded-md flex flex-col antialiased  bg-white dark:bg-darker  items-center justify-center relative overflow-hidden">
             <h2 className='mb-16'>
                 Our Partners
             </h2>

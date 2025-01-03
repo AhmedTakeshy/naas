@@ -79,7 +79,7 @@ body {
   }
 
   section {
-    @apply my-10;
+    @apply my-12;
   }
 
   h2 {
