@@ -68,26 +68,26 @@ export default function Services() {
                 <p>
                     Transforming your online presence with innovative digital strategies
                 </p>
-                <div className='grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-24 my-20'>
+                <ul className='grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-24 my-20'>
                     {services.map((service, index) => (
                         <ServiceCard key={index} {...service} />
                     ))}
-                </div>
+                </ul>
                 <p className='text-dark-purple self-start border-b-2 border-white pb-4 w-full flex items-center gap-1'><i className='inline-block w-2 h-2 bg-white rounded-full ' />The company&apos;s philosophy</p>
             </div>
-            <div className='grid sm:grid-cols-2 '>
+            <div className='grid sm:grid-cols-2 justify-between gap-4'>
                 <div className='flex flex-col items-start gap-6 text-left'>
-                    <p className='text-dark-purple text-[62px] font-medium'>We bear the responsibility of developing the sector.</p>
-                    <p className='text-neutral-500 text-2xl'>Elevate your brand with our comprehensive marketing solutions, including Digital Marketing, Content Creation, and Social Media Strategy. Enhance visibility through expert SEO and PPC management, </p>
+                    <p className='text-dark-purple sm:text-[62px] text-[32px] font-medium'>We bear the responsibility of developing the sector.</p>
+                    <p className='text-neutral-500 sm:text-2xl text-base'>Elevate your brand with our comprehensive marketing solutions, including Digital Marketing, Content Creation, and Social Media Strategy. Enhance visibility through expert SEO and PPC management, </p>
                 </div>
-                <div className="flex flex-col gap-16">
+                <ul className="grid grid-cols-2 sm:grid-cols-1 gap-16">
                     {statistics.map((statistic, index) => (
-                        <div key={`${statistic.subTitle}-${index}`} className='flex flex-col items-center gap-2'>
+                        <li key={`${statistic.subTitle}-${index}`} className='flex flex-col sm:items-center items-start gap-2'>
                             <h3 className='text-[48px] font-semibold'>{statistic.title}</h3>
                             <p className='text-neutral-500 font-medium text-lg'>{statistic.subTitle}</p>
-                        </div>
+                        </li>
                     ))}
-                </div>
+                </ul>
             </div>
         </section>
     )
