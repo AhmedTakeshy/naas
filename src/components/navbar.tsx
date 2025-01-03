@@ -16,8 +16,8 @@ import { LuMenu } from "react-icons/lu"
 
 const links = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About us" },
-    { href: "/services", label: "Services" },
+    { href: "#about", label: "About us" },
+    { href: "#services", label: "Services" },
     { href: "/branches", label: "Branches" },
     { href: "/jobs", label: "Jobs" },
 ]
@@ -35,7 +35,7 @@ export default function Navbar() {
 
     return (
         <header
-            className={`flex py-6 mx-auto sm:justify-around justify-between items-center w-full md:px-8 px-4 sm:px-8`}
+            className={`flex py-6 mx-auto sm:justify-around justify-between items-center w-full container px-4 sm:px-8`}
         >
             <Link
                 href="/"
@@ -53,7 +53,7 @@ export default function Navbar() {
                         <NavigationMenuItem key={link.label}>
                             <Link href={`${link.href}`} legacyBehavior passHref>
                                 <NavigationMenuLink className={`${navigationMenuTriggerStyle()} hover:bg-transparent bg-transparent hover:text-light-green-70 text-white border-2 border-transparent focus:bg-transparent focus:text-light-green-70 focus:border-light-green-70`}>
-                                    {link.label}
+                                    {link.label !== "Jobs" ? link.label : <>{link.label} <span className="text-white bg-dark-purple rounded-full ml-1 px-2">12</span></>}
                                 </NavigationMenuLink>
                             </Link>
                         </NavigationMenuItem>
@@ -67,7 +67,7 @@ export default function Navbar() {
                     </Link>
                 </Button>
                 <Button asChild className="btn hidden md:inline-flex border border-dark-purple bg-dark-purple transition-colors duration-300 hover:bg-transparent hover:text-white" variant={"ghost"}>
-                    <Link href="/contact">
+                    <Link href="/join">
                         Join Us
                     </Link>
                 </Button>
@@ -92,7 +92,7 @@ export default function Navbar() {
                             <LuMenu className="!size-6" />
                         </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="relative w-screen  top-5 border-none rounded-t-none bg-zinc-800">
+                    <PopoverContent className="relative w-screen top-0 border-none rounded-t-none bg-zinc-800">
                         <div className="flex flex-col items-center mx-auto gap-4">
                             <NavigationMenu>
                                 <NavigationMenuList className="flex flex-col items-center justify-center gap-2">
@@ -117,7 +117,7 @@ export default function Navbar() {
                                     </Link>
                                 </Button>
                                 <Button asChild className="btn md:hidden inline-flex border border-dark-purple bg-dark-purple transition-colors duration-300 hover:bg-transparent hover:text-white" variant={"ghost"}>
-                                    <Link href="/contact">
+                                    <Link href="/join">
                                         Join Us
                                     </Link>
                                 </Button>
