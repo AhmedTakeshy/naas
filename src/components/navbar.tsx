@@ -92,7 +92,7 @@ export default function Navbar() {
                             <LuMenu className="!size-6" />
                         </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="relative w-screen top-0 border-none rounded-t-none bg-zinc-800">
+                    <PopoverContent className="relative w-screen top-0 border-none rounded-t-none bg-light-darker">
                         <div className="flex flex-col items-center mx-auto gap-4">
                             <NavigationMenu>
                                 <NavigationMenuList className="flex flex-col items-center justify-center gap-2">
