@@ -5,6 +5,7 @@ import News from "@/components/news";
 import Partners from "@/components/partners";
 import Pricing from "@/components/pricing";
 import Services from "@/components/services";
+import Testimonials from "@/components/testimonials";
 
 export default function Home() {
   return (
@@ -13,9 +14,10 @@ export default function Home() {
       <Partners />
       <About />
       <Services />
-      {/* <Chart /> */}
+      <Chart />
       <News />
       <Pricing />
+      <Testimonials />
     </main>
   );
 }
