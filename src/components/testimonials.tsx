@@ -146,7 +146,7 @@ export default function Testimonials() {
             </Carousel>
             <ul className="mt-4 text-center flex justify-center items-center gap-2">
                 {Array.from({ length: count }).map((_, index) => (
-                    <li key={index} className={`size-2.5 rounded-full bg-white ${current === index + 1 ? "bg-darker size-3.5" : "bg-white"}`} />
+                    <li key={index} className={`size-2.5 rounded-full ${current === index + 1 ? "bg-darker size-3.5" : "bg-white"}`} />
                 ))}
             </ul>
         </section>
